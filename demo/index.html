@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            #visitlo-tour {
+                width: 500px;
+                height: 750px;
+            }
+        </style>
+        <div id="visitlo-tour"></div>
+        <script src="../dist/index.js"></script>
+        <script>
+            var Visitlo = window.Visitlo;
+            const visitlo = new Visitlo({
+                token: "293bd0932917b13ebe3d33bd530afcdc8b99b8ad33f83b3f3550be0baae00ecc",
+                baseUrl: "http://localhost:3000",
+            });
+
+            visitlo.renderTour({
+                tourId: "1a67227f-2ca8-4334-a91a-cfc93579cf41",
+                container: document.getElementById("visitlo-tour"),
+            });
+        </script>
+    </body>
+</html>
