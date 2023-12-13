@@ -46,22 +46,19 @@ class Visitlo {
         tourId: string;
         container: HTMLElement;
     }) {
-        this.getTour({ tourId })
-            .then((tour) => {
-                const iframe = document.createElement("iframe");
-                iframe.setAttribute(
-                    "src",
-                    `${this._baseUrl}/embed/tour/${tour.id}`
-                );
-                iframe.setAttribute("width", "100%");
-                iframe.setAttribute("height", "100%");
-                iframe.setAttribute("frameborder", "0");
-                iframe.setAttribute("allowfullscreen", "true");
-                container.appendChild(iframe);
-            })
-            .catch((reason) => {
-                console.error(reason);
-            });
+        const iframe = document.createElement("iframe");
+        iframe.setAttribute("src", `${this._baseUrl}/embed/tour/${tourId}`);
+        iframe.setAttribute("width", "100%");
+        iframe.setAttribute("height", "100%");
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allowfullscreen", "true");
+        container.appendChild(iframe);
+        // this.getTour({ tourId })
+        //     .then((tour) => {
+        //     })
+        //     .catch((reason) => {
+        //         console.error(reason);
+        //     });
     }
 }
 
